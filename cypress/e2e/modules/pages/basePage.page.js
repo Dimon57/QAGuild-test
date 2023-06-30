@@ -9,8 +9,8 @@ export class BasePage{
     loginByAPI(){
         cy.request({
         method: 'POST',
-        Headers: {
-            authorization: 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiaXNBZG1pbiI6dHJ1ZSwibmFtZSI6ImFkbWluIiwiaWF0IjoxNjg4MDQwODE4LCJleHAiOjE2ODg2NDU2MTh9.lae5VjhqPR5E9hAFKPVcpgWl8PTO-UY9VV39Dk97H9-q9KDc25XDbJaZkqosIeZs-JY-nqDjsfcAeL7J1Fu84g'
+        headers: {
+            authorization: 'Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIxIiwiaXNBZG1pbiI6dHJ1ZSwibmFtZSI6ImFkbWluIiwiaWF0IjoxNjg4MDQ5ODkxLCJleHAiOjE2ODg2NTQ2OTF9.nmpLzvwUeM5dZE74Fy24AqRTjkPZqK46At3gzEpDvsAXtfv1v-Tlk1x_VbNpGbmqblogNEfmoucc8--q_rBp0Q'
         },
         url: 'http://localhost:8087/api/gateway/auth/signin',
         body: {

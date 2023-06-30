@@ -1,14 +1,15 @@
-import {ApiHelper, HEADER, header} from "../../../modules/pages/apiHelper";
+import {ApiHelper} from "../../../modules/pages/apiHelper";
+
 
 const apiHelper = new ApiHelper()
 
 const DATA = {
-    userName: "admin",
+    username: "admin",
     password: "123456",
 }
 
 describe('Api test', () => {
-
+    
     it('', () => { 
         apiHelper.createUser(DATA).then((data) => {
             expect(data.status).to.eq(200)

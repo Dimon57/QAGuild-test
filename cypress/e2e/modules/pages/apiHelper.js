@@ -1,14 +1,12 @@
 import {BaseApi} from "./baseApi";
 
- 
-
 export class ApiHelper extends BaseApi {
 
     HEADER (token) {
         return {
         "accept": "application/json",
         "Content-Type": "application/json",
-        authorization: token
+        authorization: `Bearer ${token}`
     }}
 
     bodyUserCreate = (data) => {
@@ -19,23 +17,23 @@ export class ApiHelper extends BaseApi {
         }
     }
 
-    createUser(data) {
-       return this.post("login", this.bodyUserCreate(data), HEADER)
+    createUser(data, token) {
+       return this.post("api/episodes", this.bodyUserCreate(data),this.HEADER(token))
     }
 
 
-    getDataUser(name){
-        return this.get(`${name}`, HEADER)
+    getDataUser(name, token){
+        return this.get(`${name}`, this.HEADER(token))
     }
 
 
-    updatedUser(data,name) {
-        return this.put(`${name}`, this.bodyUserCreate(data), HEADER)
+    updatedUser(data,name, token) {
+        return this.put(`${name}`, this.bodyUserCreate(data), this.HEADER(token))
     }
 
 
-    deleteUser(name){
-        return this.delete(`${name}`, HEADER)
+    deleteUser(name, token){
+        return this.delete(`${name}`, this.HEADER(token))
     }
 
     
